@@ -1,0 +1,15 @@
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;--space-24:96px;--space-30:120px;
+--container-max:1200px;--container-pad:20px;--section-gap:var(--space-30);
+--radius-xs:2px;--radius-sm:4px;--radius-md:6px;--radius-lg:10px;--radius-xl:16px;--radius-pill:999px;
+--border-width:1px;--border-width-strong:2px;
+--control-h:56px;--control-h-sm:40px;
+--shadow-xs:0 1px 2px rgba(0,0,0,.06);
+--shadow-card:0 6px 24px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);
+--shadow-float:0 14px 40px rgba(0,0,0,.12);
+--shadow-red:0 8px 20px rgba(245,104,102,.35);
+--shadow-blue:0 8px 20px rgba(96,151,245,.35);
+--blur-glass:14px;
+--ease-out:cubic-bezier(.2,.7,.2,1);/* @kind other */--ease-in-out:cubic-bezier(.45,0,.2,1);/* @kind other */
+--dur-fast:120ms;/* @kind other */--dur-base:200ms;/* @kind other */--dur-slow:400ms;/* @kind other */
+}

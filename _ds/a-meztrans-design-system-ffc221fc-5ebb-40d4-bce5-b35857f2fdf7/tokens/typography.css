@@ -1,0 +1,19 @@
+:root{
+--font-sans:'Manrope','Tilda Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+--font-display:var(--font-sans);
+--font-mono:'JetBrains Mono',ui-monospace,monospace;
+--fw-light:300;/* @kind other */--fw-regular:400;/* @kind other */--fw-medium:500;/* @kind other */--fw-semibold:600;/* @kind other */--fw-bold:700;/* @kind other */--fw-black:800;/* @kind other */
+--fs-display:56px;--fs-h1:42px;--fs-h2:36px;--fs-h3:24px;--fs-h4:18px;--fs-body-lg:18px;--fs-body:16px;--fs-sm:14px;--fs-xs:12px;--fs-step:40px;
+--lh-tight:1.2;/* @kind other */--lh-snug:1.35;/* @kind other */--lh-body:1.55;/* @kind other */--lh-loose:1.7;/* @kind other */
+--ls-tight:-0.01em;/* @kind other */--ls-normal:0;/* @kind other */--ls-caps:0.04em;/* @kind other */
+--text-display:var(--fw-semibold) var(--fs-display)/var(--lh-tight) var(--font-display);
+--text-h1:var(--fw-semibold) var(--fs-h1)/var(--lh-tight) var(--font-display);
+--text-h2:var(--fw-semibold) var(--fs-h2)/var(--lh-tight) var(--font-display);
+--text-h3:var(--fw-bold) var(--fs-h3)/var(--lh-snug) var(--font-sans);
+--text-h4:var(--fw-bold) var(--fs-h4)/var(--lh-snug) var(--font-sans);
+--text-body-lg:var(--fw-regular) var(--fs-body-lg)/var(--lh-body) var(--font-sans);
+--text-body-md:var(--fw-regular) var(--fs-body)/var(--lh-body) var(--font-sans);
+--text-small:var(--fw-regular) var(--fs-sm)/var(--lh-body) var(--font-sans);
+--text-caption:var(--fw-regular) var(--fs-xs)/var(--lh-snug) var(--font-sans);
+--text-button:var(--fw-bold) var(--fs-sm)/1 var(--font-sans);
+}
