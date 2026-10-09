@@ -46,11 +46,12 @@ Contains header, hero, cards, about, steps, stripe, contact. Overflow hidden onl
 
 ### 4. Feature cards (asymmetric)
 Wrapper: `margin-top: clamp(-24px, calc(560px - 100vw), 44px)` — on desktop the top card **overlaps the bottom ~half of the CTA row** (its top edge crosses the "Contact us" label; first letters "Võtke"/"Связ" remain readable). Column flex, gap 13px, full container width.
-- **Card 1 (white glass)** — `position:relative; z-index:2`; width `max(calc((100% - 13px)/2), min(100%, 280px))` (= same width as bottom cards).
-  - Rest: `margin-left: clamp(0px, calc(100% - 410px), 280px)` (≈280px on desktop, 0 on mobile).
+- **Card 1 (white glass)** — `position:relative; z-index:2`; width always equals a bottom card: half of the row (minus 13px gap) when the bottom grid has 2 columns (container ≥ 573px), 100% when it collapses to 1 column.
+  - Rest: `margin-left` ≈280px on desktop; 0 whenever the grid is single-column (mobile).
   - When secondary CTA hovered: `margin-left: calc(100% - <card width>)` → aligns right, exactly above Card 3.
   - Transition: `margin-left 900ms cubic-bezier(.2,.7,.2,1)`.
 - **Cards 2 (red tint) + 3 (blue tint)**: grid `repeat(auto-fit, minmax(min(100%, 280px), 1fr))`, gap 13px.
+- Card borders: white card `rgba(255,255,255,.7)`; red card `#FAE5E4`; blue card `#E3ECFA`.
 - Card style: padding 28px 20px 26px; radius 10px; `backdrop-filter: blur(14px)`; border 1px `rgba(255,255,255,.7)`; shadow `0 6px 24px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04)`; hover lift −2px + shadow `0 14px 40px rgba(0,0,0,.12)` (400ms).
   - Backgrounds: white `rgba(255,255,255,.72)`, red `rgba(250,229,228,.78)`, blue `rgba(227,236,250,.78)`.
   - Title row: 18px line icon + title, 700 16px / 1.35, gap 8, margin-bottom 18. Body 400 14px / 1.6.
@@ -61,7 +62,7 @@ Wrapper: `margin-top: clamp(-24px, calc(560px - 100vw), 44px)` — on desktop th
 - Left column (flex 1 1 300px, max 450px):
   - H2: 700 `clamp(26px,4vw,31px)` / 1.25, -0.01em.
   - Subtitle: margin-top 12px, 14px, `#5C5C5C`.
-  - **Bus animation row** (margin-top 28px, width min(100%,300px), flex, align-items flex-end, gap 10px, aria-hidden):
+  - **Bus animation row** (margin-top 28px, width min(100%,300px) — **100% on ≤600px** so the right house aligns with the text edge; flex, align-items flex-end, gap 10px, aria-hidden):
     - Left: house **with door** `house1.svg`, 26×26, colored `#F56866` (use as CSS mask).
     - Middle track: flex 1, height 26, relative. Bus `icon3.svg` 34×20, color `#1A1A1A`, absolute, bottom 2px.
     - Right: house **without door** `house2.svg`, 26×26, `#6097F5`.
@@ -75,6 +76,7 @@ Wrapper: `margin-top: clamp(-24px, calc(560px - 100vw), 44px)` — on desktop th
     - Reduced motion: static.
   - Paragraph: margin-top 28px; 14px / 1.7; starts with **A-Mežtrans** in bold.
 - Right: `assets/site/mersik.png` (cut-out red coach, transparent bg), width 330 max 100%, aspect 1, `object-fit: contain`, margin `-30px 0 -40px`. No frame/radius.
+  - ≤600px: photo bleeds to the right viewport edge — `width: calc(100% + 20px); margin-right: -20px; object-position: right center` (left edge stays aligned with text).
 
 ### 6. Steps
 `padding-top: clamp(56px, 9vw, 80px)`. H2 + subtitle as above.
@@ -95,6 +97,7 @@ Margin-top 52px, column:
 ### 9. Footer
 Bg `#1A1A1A`. Inner container padding 24px 0; flex-wrap, space-between, center, gap 16px 40px.
 - Left: tagline 14px `#B8B8B8` — **hidden ≤600px**.
+- ≤600px: credit row spans full width, `justify-content: space-between` (© left, "Designed by" right).
 - Right (flex-wrap, gap 4px 16px, 500 14px/1.6 `#B8B8B8`, may wrap on mobile):
   - `© A-MežTrans OÜ 2026`
   - `Designed by ` + link **Mežennõi** → `https://sanya-boss.github.io/cv.html` (new tab, `rel="noopener"`), white 700, hover `#F7A9A8`.

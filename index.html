@@ -55,7 +55,7 @@
     *:focus-visible{outline:2px solid var(--blue-500);outline-offset:2px}
     [data-lang] button{transition:border-color 180ms cubic-bezier(.2,.7,.2,1)}
     [data-lang] button:hover{border-color:var(--ink-800)!important}
-    @media (max-width:600px){[data-hide-mobile]{display:none!important}}
+    @media (max-width:600px){[data-hide-mobile]{display:none!important}[data-bus-photo]{flex:0 0 auto!important;width:calc(100% + 20px)!important;max-width:none!important;margin-right:-20px!important;object-position:right center}[data-foot-credit]{flex:1 1 100%!important;justify-content:space-between}[data-bus-row]{width:100%!important}}
   </style>
 </helmet>
 
@@ -90,12 +90,12 @@
         </div>
 
         <div style="margin-top:clamp(-24px, calc(560px - 100vw), 44px);display:flex;flex-direction:column;gap:13px">
-          <div style="position:relative;z-index:2;width:max(calc((100% - 13px) / 2), min(100%, 280px));margin-left:{{ card1Left }};transition:margin-left 900ms cubic-bezier(.2,.7,.2,1)">
+          <div style="position:relative;z-index:2;width:{{ card1Width }};margin-left:{{ card1Left }};transition:margin-left 900ms cubic-bezier(.2,.7,.2,1)">
             <x-import component-from-global-scope="AMeztransDesignSystem_ffc221.FeatureCard" tone="white" icon="alarm-clock" title="{{ t.c1t }}" style="{{ cardStyle }}" hint-size="100%,116px">{{ t.c1 }}</x-import>
           </div>
           <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));gap:13px">
-            <x-import component-from-global-scope="AMeztransDesignSystem_ffc221.FeatureCard" tone="red" icon="users" title="{{ t.c2t }}" style="{{ cardStyle }}" hint-size="100%,116px">{{ t.c2 }}</x-import>
-            <x-import component-from-global-scope="AMeztransDesignSystem_ffc221.FeatureCard" tone="blue" icon="bus" title="{{ t.c3t }}" style="{{ cardStyle }}" hint-size="100%,116px">{{ t.c3 }}</x-import>
+            <x-import component-from-global-scope="AMeztransDesignSystem_ffc221.FeatureCard" tone="red" icon="users" title="{{ t.c2t }}" style="{{ cardStyleRed }}" hint-size="100%,116px">{{ t.c2 }}</x-import>
+            <x-import component-from-global-scope="AMeztransDesignSystem_ffc221.FeatureCard" tone="blue" icon="bus" title="{{ t.c3t }}" style="{{ cardStyleBlue }}" hint-size="100%,116px">{{ t.c3 }}</x-import>
           </div>
         </div>
       </section>
@@ -104,14 +104,14 @@
         <div style="flex:1 1 300px;max-width:450px;display:flex;flex-direction:column">
           <h2 id="about-title" style="margin:0;font:var(--fw-bold) clamp(26px, 4vw, 31px)/1.25 var(--font-sans);letter-spacing:var(--ls-tight);color:var(--text-strong)">{{ t.aboutT }}</h2>
           <p style="margin:12px 0 0;font:var(--text-small);color:var(--text-muted)">{{ t.aboutSub }}</p>
-          <div aria-hidden="true" style="margin-top:28px;width:min(100%, 300px);display:flex;align-items:flex-end;gap:10px">
+          <div data-bus-row="" aria-hidden="true" style="margin-top:28px;width:min(100%, 300px);display:flex;align-items:flex-end;gap:10px">
             <span style="flex:none;width:26px;height:26px;background:var(--brand-primary);-webkit-mask:url(assets/site/house1.svg) center/contain no-repeat;mask:url(assets/site/house1.svg) center/contain no-repeat"></span>
             <div style="position:relative;flex:1;height:26px">{{ busEl }}</div>
             <span style="flex:none;width:26px;height:26px;background:var(--brand-secondary);-webkit-mask:url(assets/site/house2.svg) center/contain no-repeat;mask:url(assets/site/house2.svg) center/contain no-repeat"></span>
           </div>
           <p style="margin:28px 0 0;font:var(--text-small);line-height:1.7;color:var(--text-body);text-wrap:pretty"><strong>A-Mežtrans</strong>{{ t.aboutBody }}</p>
         </div>
-        <img src="assets/site/mersik.png" alt="{{ t.busAlt }}" style="flex:0 1 330px;width:330px;max-width:100%;height:auto;aspect-ratio:1;object-fit:contain;margin:-30px 0 -40px">
+        <img src="assets/site/mersik.png" alt="{{ t.busAlt }}" data-bus-photo="" style="flex:0 1 330px;width:330px;max-width:100%;height:auto;aspect-ratio:1;object-fit:contain;margin:-30px 0 -40px">
       </section>
 
       <section aria-labelledby="steps-title" style="width:min(100% - 40px, 810px);margin:0 auto;padding-top:clamp(56px, 9vw, 80px)">
@@ -144,7 +144,7 @@
   <div style="background:var(--surface-inverse);color:var(--text-on-inverse)">
     <div style="width:min(100% - 40px, 810px);margin:0 auto;padding:24px 0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 40px">
       <span data-hide-mobile="" style="flex:1 1 240px;font:var(--text-small);color:var(--ink-300)">{{ t.tagline }}</span>
-      <span style="flex:0 1 auto;min-width:0;max-width:100%;display:flex;flex-wrap:wrap;gap:4px 16px;overflow-wrap:anywhere;font:var(--fw-medium) var(--fs-sm)/1.6 var(--font-sans);color:var(--ink-300)"><span>© A-MežTrans OÜ 2026</span><span>Designed by <a href="https://sanya-boss.github.io/cv.html" target="_blank" rel="noopener" style="color:var(--white);font-weight:700;text-decoration:none" style-hover="color:var(--red-300)">Mežennõi</a></span></span>
+      <span data-foot-credit="" style="flex:0 1 auto;min-width:0;max-width:100%;display:flex;flex-wrap:wrap;gap:4px 16px;overflow-wrap:anywhere;font:var(--fw-medium) var(--fs-sm)/1.6 var(--font-sans);color:var(--ink-300)"><span>© A-MežTrans OÜ 2026</span><span>Designed by <a href="https://sanya-boss.github.io/cv.html" target="_blank" rel="noopener" style="color:var(--white);font-weight:700;text-decoration:none" style-hover="color:var(--red-300)">Mežennõi</a></span></span>
     </div>
   </div>
 </div>
@@ -282,8 +282,11 @@ class Component extends DCLogic {
       contactStyle: Object.assign({ minWidth: 124, padding: '0 26px' }, s.contactHover ? { background: 'var(--ink-800)', boxShadow: '0 8px 20px rgba(0,0,0,.18)' } : {}),
       contactIn: () => this.setState({ contactHover: true }),
       contactOut: () => this.setState({ contactHover: false }),
-      card1Left: s.contactHover ? 'calc(100% - max(calc((100% - 13px) / 2), min(100%, 280px)))' : 'clamp(0px, calc(100% - 410px), 280px)',
+      card1Width: 'clamp(min(100%, 280px), calc((100% - 13px) / 2 + max(0px, 573px - 100%) * 1000), 100%)',
+      card1Left: s.contactHover ? 'calc(100% - clamp(min(100%, 280px), calc((100% - 13px) / 2 + max(0px, 573px - 100%) * 1000), 100%))' : 'clamp(0px, min(calc(100% - 410px), calc((100% - 573px) * 1000)), 280px)',
       cardStyle: { width: '100%', height: '100%' },
+      cardStyleRed: { width: '100%', height: '100%', border: '1px solid var(--red-100)' },
+      cardStyleBlue: { width: '100%', height: '100%', border: '1px solid var(--blue-100)' },
       busEl: React.createElement('span', { ref: this.busRef, style: { position: 'absolute', left: 0, bottom: 2, width: 34, height: 20, background: 'var(--ink-800)', WebkitMask: 'url(assets/site/icon3.svg) center/contain no-repeat', mask: 'url(assets/site/icon3.svg) center/contain no-repeat' } })
     };
   }
