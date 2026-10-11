@@ -100,7 +100,7 @@ Bg `#1A1A1A`. Inner container padding 24px 0; flex-wrap, space-between, center, 
 - ≤600px: credit row spans full width, `justify-content: space-between` (© left, "Designed by" right).
 - Right (flex-wrap, gap 4px 16px, 500 14px/1.6 `#B8B8B8`, may wrap on mobile):
   - `© A-MežTrans OÜ 2026`
-  - `Designed by ` + link **Mežennõi** → `https://sanya-boss.github.io/cv.html` (new tab, `rel="noopener"`), white 700, hover `#F7A9A8`.
+  - `Designed by ` + link **Mežennõi** → `https://sanya-boss.github.io/portfolio/` (new tab, `rel="noopener"`), white 700, hover `#F7A9A8`.
 
 ## Interactions & Behavior summary
 - Smooth scroll for CTAs (no scroll-jacking).
